@@ -1,77 +1,223 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-BR" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070707">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://digsawtv.github.io/digs-tv/terms.html">
 <title>Termos de Serviço — DIGS TV</title>
+<meta name="description" content="Regras de utilização do DIGS TV no Discord e no DIGS TV Web.">
 <style>
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-    color: #222;
-}
-h1 {
-    margin-bottom: 5px;
-}
-h2 {
-    margin-top: 30px;
-}
-p, li {
-    font-size: 16px;
-}
-.header {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
-}
+:root{--bg:#070707;--panel:#101010;--panel2:#161616;--text:#f7f7f7;--muted:#b8b8b8;--orange:#ff7a00;--orange2:#ffae42;--blue:#37b7ff;--line:#2b2b2b;--shadow:0 0 28px rgba(255,122,0,.18)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,rgba(255,122,0,.13),transparent 28rem),linear-gradient(180deg,#050505,#090909 40%,#050505);color:var(--text);font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;line-height:1.72;min-height:100vh}
+a{color:var(--orange2);text-decoration:none}a:hover{text-decoration:underline;color:#fff}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(6,6,6,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,122,0,.32)}
+.topbar-inner{max-width:1120px;margin:auto;padding:13px 22px;display:flex;align-items:center;gap:18px;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.08em}.bolt{font-size:1.65rem;filter:drop-shadow(0 0 9px #ff7a00)}.brand small{display:block;color:var(--muted);font-size:.7rem;letter-spacing:.18em;margin-top:-3px}
+.lang-wrap{display:flex;align-items:center;gap:10px}.lang-label{font-size:.72rem;color:var(--muted);font-weight:800;letter-spacing:.12em}.lang-select{max-width:260px;background:#111;color:#fff;border:1px solid #4b321d;border-radius:10px;padding:10px 12px;font-weight:700;outline:none}.lang-select:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,122,0,.13)}
+.hero{max-width:1120px;margin:0 auto;padding:64px 22px 28px}.eyebrow{color:var(--orange2);font-weight:900;letter-spacing:.2em;font-size:.78rem}.hero h1{font-size:clamp(2.25rem,6vw,4.7rem);line-height:1.02;margin:10px 0 18px;letter-spacing:-.045em;text-shadow:0 0 28px rgba(255,122,0,.18)}.hero p{font-size:clamp(1rem,2vw,1.22rem);color:#d6d6d6;max-width:820px}.official{display:inline-flex;gap:8px;align-items:center;margin-top:14px;border:1px solid rgba(55,183,255,.35);background:rgba(55,183,255,.07);padding:9px 13px;border-radius:999px;color:#d9f2ff;font-size:.88rem;font-weight:750}
+.layout{max-width:1120px;margin:auto;padding:0 22px 70px;display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:28px}.document{background:linear-gradient(180deg,rgba(20,20,20,.96),rgba(11,11,11,.98));border:1px solid var(--line);border-radius:20px;padding:clamp(24px,4vw,50px);box-shadow:var(--shadow)}.document h1{display:none}.document h2{font-size:1.42rem;margin:2.4rem 0 .8rem;color:#fff;line-height:1.25;border-left:4px solid var(--orange);padding-left:13px}.document h2:first-of-type{margin-top:.3rem}.document p,.document li{font-size:1.02rem;color:#e3e3e3}.document ul{padding-left:1.4rem}.document li{margin:.32rem 0}.document strong{color:#fff}.document code{background:#050505;border:1px solid #333;padding:.16rem .42rem;border-radius:6px;color:#ffd3aa;overflow-wrap:anywhere}
+.notice{margin:0 0 28px;border:1px solid rgba(255,122,0,.34);background:linear-gradient(135deg,rgba(255,122,0,.10),rgba(255,122,0,.025));border-radius:15px;padding:17px 19px}.notice strong{display:block;color:#fff;margin-bottom:4px}.notice p{margin:0;color:#d8d8d8;font-size:.94rem}
+.side{position:sticky;top:84px;align-self:start}.side-card{background:#0e0e0e;border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px}.side-card h3{font-size:.78rem;color:var(--muted);letter-spacing:.13em;margin:0 0 12px}.side-card a{display:block;padding:9px 10px;border-radius:9px;font-weight:750}.side-card a:hover{background:rgba(255,122,0,.08);text-decoration:none}.status{display:flex;align-items:center;gap:9px;color:#ddd;font-size:.9rem}.dot{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 10px var(--orange)}
+.footer{border-top:1px solid #242424;background:#050505}.footer-inner{max-width:1120px;margin:auto;padding:28px 22px 34px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center}.footer-brand{font-weight:900}.footer-brand span{color:var(--orange2)}.footer-links{display:flex;gap:16px;flex-wrap:wrap;font-size:.9rem}.copyright{width:100%;color:#777;font-size:.78rem;margin-top:5px}
+.translate-note{font-size:.75rem;color:#777;margin-top:8px;max-width:280px}.flash{height:2px;background:linear-gradient(90deg,transparent,var(--orange),#fff,var(--blue),transparent);opacity:.75;box-shadow:0 0 14px rgba(255,122,0,.6)}
+@media(max-width:860px){.layout{grid-template-columns:1fr}.side{position:static;order:-1}.side-card.links{display:flex;flex-wrap:wrap;gap:4px}.side-card h3{width:100%}.topbar-inner{align-items:flex-start}.lang-wrap{flex-direction:column;align-items:flex-end;gap:3px}.lang-select{max-width:210px}.hero{padding-top:42px}}
+@media(max-width:560px){.topbar-inner{padding:11px 14px}.brand small,.lang-label{display:none}.brand{font-size:.9rem}.lang-select{max-width:175px;padding:9px}.hero{padding:34px 16px 20px}.layout{padding:0 14px 48px}.document{padding:23px 18px;border-radius:15px}.document h2{font-size:1.23rem}.document p,.document li{font-size:.98rem}.footer-inner{padding-left:16px;padding-right:16px}}
+@media print{.topbar,.side,.footer,.flash,.notice{display:none!important}body{background:#fff;color:#000}.layout{display:block;padding:0}.document{box-shadow:none;border:0;padding:0;background:#fff}.document p,.document li,.document h2,.document strong{color:#000}.document h1{display:block}}
 </style>
 </head>
-
 <body>
-
-<div class="header">
-<h1>Termos de Serviço — DIGS TV</h1>
-<p><strong>Última atualização:</strong> 25/09/2026</p>
-</div>
-
+<header class="topbar"><div class="topbar-inner">
+  <div class="brand"><span class="bolt">⚡</span><div>DIGS TV<small>LEGAL & TRANSPARÊNCIA</small></div></div>
+  <div class="lang-wrap"><label class="lang-label" for="language-select">IDIOMA / LANGUAGE</label><select id="language-select" class="lang-select" aria-label="Selecionar idioma"><option value="pt-BR">🇧🇷 Português (Brasil)</option>
+<option value="en">🇺🇸 English (United States)</option>
+<option value="es">🇪🇸 Español (España)</option>
+<option value="fr">🇫🇷 Français (France)</option>
+<option value="de">🇩🇪 Deutsch (Deutschland)</option>
+<option value="it">🇮🇹 Italiano (Italia)</option>
+<option value="ja">🇯🇵 日本語 (日本)</option>
+<option value="ko">🇰🇷 한국어 (대한민국)</option>
+<option value="zh-CN">🇨🇳 中文 (中国)</option>
+<option value="ru">🇷🇺 Русский (Россия)</option>
+<option value="ar">🇸🇦 العربية (السعودية)</option>
+<option value="hi">🇮🇳 हिन्दी (भारत)</option></select></div>
+</div><div class="flash"></div></header>
+<main>
+<section class="hero"><div class="eyebrow">DOCUMENTO OFICIAL</div><h1>Termos de Serviço</h1><p>Regras de utilização do DIGS TV no Discord e no DIGS TV Web.</p><div class="official">✓ Versão original e oficial: Português (Brasil)</div></section>
+<div class="layout">
+<article class="document">
+<div class="notice"><strong>Traduções</strong><p>Os outros idiomas são oferecidos para facilitar a compreensão por meio de tradução automática. Em caso de divergência de tradução, a versão original em Português (Brasil) é a referência do texto publicado pelo DIGS TV.</p></div>
 <h2>1. Sobre o DIGS TV</h2>
-<p>O DIGS TV é um aplicativo/bot desenvolvido para utilização em servidores da plataforma Discord. O serviço oferece recursos de administração, moderação, comunidade, suporte, tickets, níveis/XP, boas-vindas, traduções e outras funcionalidades disponibilizadas pelo aplicativo.</p>
-
+<p>O DIGS TV é um aplicativo, bot e plataforma Web desenvolvido para
+oferecer funcionalidades integradas ao Discord e recursos próprios de
+música, rádio e comunidade.</p>
+<p>O serviço pode oferecer recursos de administração, moderação,
+comunidade, suporte, tickets, níveis/XP, boas-vindas, traduções,
+eventos, notificações, backups, painel Web, reprodução de mídia, rádios,
+filas, playlists, histórico, favoritos e outras funcionalidades
+disponibilizadas pelo aplicativo.</p>
 <h2>2. Aceitação dos Termos</h2>
-<p>Ao utilizar o DIGS TV em um servidor Discord ou interagir com suas funcionalidades, você concorda com estes Termos de Serviço.</p>
+<p>Ao utilizar o DIGS TV em um servidor Discord, acessar o painel Web,
+autenticar-se pelo Discord ou interagir com suas funcionalidades, você
+concorda com estes Termos de Serviço e com a Política de Privacidade do
+DIGS TV.</p>
 <p>Caso não concorde com estes Termos, não utilize o DIGS TV.</p>
-
-<h2>3. Utilização do serviço</h2>
-<p>O DIGS TV deve ser utilizado de acordo com estes Termos de Serviço, as regras do servidor em que estiver instalado, os Termos de Serviço do Discord, as Diretrizes da Comunidade do Discord e as leis e regulamentações aplicáveis.</p>
-
-<h2>4. Moderação</h2>
-<p>O DIGS TV pode disponibilizar ferramentas de moderação, incluindo advertências, expulsões, banimentos, timeout, limpeza de mensagens, controle de spam e outras funcionalidades administrativas.</p>
-<p>As ações realizadas por essas ferramentas dependem das permissões concedidas ao aplicativo e das configurações do servidor.</p>
-<p>A administração de um servidor continua sendo responsável pelas decisões tomadas por seus administradores e moderadores.</p>
-
-<h2>5. Tickets e suporte</h2>
-<p>O DIGS TV pode disponibilizar sistemas de tickets para atendimento, denúncias, suporte, parcerias e outras finalidades.</p>
-
-<h2>6. Experiência e funcionalidades</h2>
-<p>O DIGS TV pode oferecer recursos como sistema de XP e níveis, estatísticas, cargos, autorroles, mensagens de boas-vindas, eventos, notificações, tickets, ferramentas de moderação, tradução de mensagens e backups.</p>
-
-<h2>7. Serviços de terceiros</h2>
-<p>Algumas funcionalidades podem utilizar serviços externos para processamento ou integração. Quando aplicável, essas operações são descritas na Política de Privacidade.</p>
-
-<h2>8. Disponibilidade</h2>
-<p>O DIGS TV é fornecido conforme sua disponibilidade. Podem ocorrer interrupções decorrentes de manutenção, atualizações, problemas técnicos, indisponibilidade do Discord ou de serviços externos.</p>
-
-<h2>9. Alterações</h2>
-<p>Estes Termos podem ser atualizados para refletir alterações no DIGS TV, em suas funcionalidades ou nas exigências aplicáveis.</p>
-
-<h2>10. Contato</h2>
+<h2>3. Conta, autenticação e acesso</h2>
+<p>Determinadas funcionalidades podem exigir autenticação por meio do
+Discord.</p>
+<p>O usuário é responsável por utilizar sua própria conta e por proteger o
+acesso ao dispositivo e à conta Discord utilizados para acessar o DIGS
+TV.</p>
+<p>O DIGS TV não solicita a senha do Discord. A autenticação é realizada
+por meio dos mecanismos de autorização disponibilizados pelo Discord.</p>
+<p>Algumas áreas ou funções podem ser limitadas conforme permissões,
+cargos, servidor, configuração administrativa ou disponibilidade
+técnica.</p>
+<h2>4. Utilização do serviço</h2>
+<p>O DIGS TV deve ser utilizado de acordo com estes Termos de Serviço, as
+regras do servidor em que estiver instalado, os termos e políticas das
+plataformas e serviços integrados e as leis e regulamentações
+aplicáveis.</p>
+<p>O usuário não deve utilizar o DIGS TV para tentar obter acesso não
+autorizado, interferir no funcionamento do serviço, contornar controles
+de segurança, explorar falhas de forma abusiva, enviar conteúdo ilícito
+ou utilizar funcionalidades de maneira destinada a prejudicar outros
+usuários, servidores ou serviços.</p>
+<h2>5. Administração e moderação</h2>
+<p>O DIGS TV pode disponibilizar ferramentas de moderação, incluindo
+advertências, expulsões, banimentos, timeout, limpeza de mensagens,
+controle de spam e outras funcionalidades administrativas.</p>
+<p>As ações realizadas por essas ferramentas dependem das permissões
+concedidas ao aplicativo e das configurações do servidor.</p>
+<p>A administração de um servidor continua sendo responsável pelas decisões
+tomadas por seus administradores e moderadores e pelo uso das
+ferramentas disponibilizadas pelo DIGS TV.</p>
+<h2>6. Tickets e suporte</h2>
+<p>O DIGS TV pode disponibilizar sistemas de tickets para atendimento,
+denúncias, suporte, parcerias e outras finalidades.</p>
+<p>O usuário deve evitar compartilhar em tickets informações sensíveis que
+não sejam necessárias para o atendimento.</p>
+<h2>7. XP, níveis, estatísticas e comunidade</h2>
+<p>O DIGS TV pode oferecer sistema de XP e níveis, estatísticas, cargos,
+autorroles, mensagens de boas-vindas, eventos, notificações e outros
+recursos de comunidade.</p>
+<p>Regras, limites e critérios dessas funcionalidades podem ser atualizados
+para preservar o funcionamento, a segurança e o equilíbrio do serviço.</p>
+<p>XP, níveis, conquistas e elementos semelhantes são recursos internos do
+DIGS TV e não representam moeda, crédito financeiro ou direito a
+pagamento, salvo se uma funcionalidade específica declarar expressamente
+o contrário.</p>
+<h2>8. Música, rádio, playlists, histórico e favoritos</h2>
+<p>O DIGS TV pode disponibilizar recursos de reprodução e descoberta de
+músicas e rádios, filas, playlists, histórico, favoritos e preferências
+de reprodução.</p>
+<p>A disponibilidade de uma música, estação, metadado, imagem, stream ou
+outra mídia pode depender de serviços e fontes externas e pode mudar sem
+aviso.</p>
+<p>O usuário deve utilizar esses recursos respeitando os direitos, termos e
+restrições aplicáveis ao conteúdo e aos serviços externos envolvidos.</p>
+<h2>9. Painel Web e preferências</h2>
+<p>O painel Web pode permitir que o usuário consulte e controle
+funcionalidades do DIGS TV por meio de uma interface autenticada.</p>
+<p>Preferências como idioma e escolha de continuidade do login podem ser
+preservadas no navegador ou na sessão conforme a funcionalidade
+disponível.</p>
+<p>O usuário é responsável por encerrar a sessão ou limpar os dados do
+navegador quando utilizar dispositivo compartilhado e desejar remover
+preferências locais.</p>
+<h2>10. Traduções</h2>
+<p>O DIGS TV pode oferecer traduções automáticas de textos e da interface.</p>
+<p>Traduções automáticas podem conter erros, diferenças de contexto ou
+variações de interpretação. A versão original em Português (Brasil) dos
+documentos oficiais do DIGS TV é a versão de referência publicada pelo
+serviço.</p>
+<h2>11. Serviços de terceiros</h2>
+<p>Algumas funcionalidades podem utilizar ou depender de serviços externos
+para autenticação, tradução, mídia, rádio, metadados ou outras
+integrações.</p>
+<p>Esses serviços possuem termos, políticas, disponibilidade e regras
+próprias. O DIGS TV não controla integralmente a operação de serviços
+externos.</p>
+<p>Quando aplicável, o tratamento de informações relacionado a essas
+integrações é descrito na Política de Privacidade.</p>
+<h2>12. Segurança e auditoria</h2>
+<p>O DIGS TV pode registrar determinadas ações administrativas e eventos
+técnicos para fins de segurança, diagnóstico, prevenção de abuso e
+auditoria.</p>
+<p>O usuário não deve tentar desativar, adulterar ou contornar mecanismos
+de segurança ou registros de auditoria utilizados legitimamente pelo
+serviço.</p>
+<h2>13. Disponibilidade</h2>
+<p>O DIGS TV é fornecido conforme sua disponibilidade.</p>
+<p>Podem ocorrer interrupções decorrentes de manutenção, atualizações,
+problemas técnicos, alterações de infraestrutura, indisponibilidade do
+Discord, de fontes de mídia, de rádios ou de outros serviços externos.</p>
+<p>Funcionalidades podem ser modificadas, substituídas, suspensas ou
+descontinuadas quando necessário para manutenção, segurança,
+compatibilidade ou evolução do projeto.</p>
+<h2>14. Backups e restauração</h2>
+<p>O DIGS TV pode disponibilizar ferramentas de backup de determinadas
+configurações do servidor.</p>
+<p>A existência de uma funcionalidade de backup não constitui garantia de
+recuperação integral de todos os dados, mensagens, mídias ou
+configurações externas ao escopo efetivamente registrado pelo DIGS TV.</p>
+<h2>15. Responsabilidades</h2>
+<p>O DIGS TV busca oferecer suas funcionalidades de forma segura e
+funcional, mas não pode garantir operação ininterrupta, ausência
+absoluta de erros ou disponibilidade permanente de serviços de
+terceiros.</p>
+<p>Administradores e usuários continuam responsáveis pelas ações que
+realizarem por meio das funcionalidades às quais tenham acesso.</p>
+<p>Nada nestes Termos pretende excluir ou limitar direitos que não possam
+ser legalmente excluídos ou limitados pela legislação aplicável.</p>
+<h2>16. Alterações</h2>
+<p>Estes Termos podem ser atualizados para refletir alterações no DIGS TV,
+em suas funcionalidades, integrações, requisitos de segurança ou
+exigências aplicáveis.</p>
+<p>A versão atualizada será disponibilizada no endereço oficial dos Termos
+de Serviço.</p>
+<h2>17. Idiomas e versão de referência</h2>
+<p>A versão original e de referência destes Termos é a versão em Português
+(Brasil).</p>
+<p>O DIGS TV pode disponibilizar traduções para facilitar a compreensão dos
+usuários. Em caso de divergência causada exclusivamente por tradução, a
+versão original em Português (Brasil) será utilizada como referência do
+texto publicado pelo DIGS TV, sem prejuízo de direitos que sejam
+obrigatórios pela legislação aplicável.</p>
+<h2>18. Contato</h2>
 <p>Para dúvidas, solicitações ou questões relacionadas ao DIGS TV:</p>
 <p><strong>E-mail:</strong> digsawtv@gmail.com</p>
 <p><strong>Aplicativo:</strong> DIGS TV</p>
-<p><strong>Plataforma:</strong> Discord</p>
+<p><strong>Plataformas:</strong> Discord e DIGS TV Web</p>
 
-</body>
-</html>
+</article>
+<aside class="side">
+  <div class="side-card links"><h3>DIGS TV</h3><a data-legal-link href="https://digsawtv.github.io/digs-tv/privacy.html">Política de Privacidade</a><a href="mailto:digsawtv@gmail.com">Contato</a></div>
+  <div class="side-card"><div class="status"><span class="dot"></span><strong>PT-BR</strong> oficial</div><div class="translate-note">Ao escolher outro idioma, a visualização é aberta pelo serviço de tradução de sites do Google. O texto oficial permanece em Português (Brasil).</div></div>
+</aside>
+</div>
+</main>
+<footer class="footer"><div class="footer-inner"><div class="footer-brand">⚡ DIGS TV — <span>Sua música. Seu servidor. Seu ritmo.</span></div><div class="footer-links"><a data-legal-link href="https://digsawtv.github.io/digs-tv/privacy.html">Política de Privacidade</a><a data-legal-link href="https://digsawtv.github.io/digs-tv/terms.html">Termos de Serviço</a><a href="mailto:digsawtv@gmail.com">Contato</a></div><div class="copyright">© 2026 DIGS TV. Documento oficial em Português (Brasil).</div></div></footer>
+<script>
+const PAGE_URL = "https://digsawtv.github.io/digs-tv/terms.html";
+const STORAGE_KEY = 'digs-ui-language';
+const LANG_META = {"pt-BR": {"label": "Português (Brasil)", "flag": "🇧🇷", "google": "pt"}, "en": {"label": "English (United States)", "flag": "🇺🇸", "google": "en"}, "es": {"label": "Español (España)", "flag": "🇪🇸", "google": "es"}, "fr": {"label": "Français (France)", "flag": "🇫🇷", "google": "fr"}, "de": {"label": "Deutsch (Deutschland)", "flag": "🇩🇪", "google": "de"}, "it": {"label": "Italiano (Italia)", "flag": "🇮🇹", "google": "it"}, "ja": {"label": "日本語 (日本)", "flag": "🇯🇵", "google": "ja"}, "ko": {"label": "한국어 (대한민국)", "flag": "🇰🇷", "google": "ko"}, "zh-CN": {"label": "中文 (中国)", "flag": "🇨🇳", "google": "zh-CN"}, "ru": {"label": "Русский (Россия)", "flag": "🇷🇺", "google": "ru"}, "ar": {"label": "العربية (السعودية)", "flag": "🇸🇦", "google": "ar"}, "hi": {"label": "हिन्दी (भारत)", "flag": "🇮🇳", "google": "hi"}};
+const select = document.getElementById('language-select');
+function normalizeLang(v){return LANG_META[v] ? v : 'pt-BR';}
+function saveLang(v){try{localStorage.setItem(STORAGE_KEY,v);}catch(e){}}
+function getLang(){try{return normalizeLang(localStorage.getItem(STORAGE_KEY)||'pt-BR');}catch(e){return 'pt-BR';}}
+function translateUrl(lang){
+  const meta=LANG_META[lang];
+  if(!meta || lang==='pt-BR') return PAGE_URL;
+  const p=new URLSearchParams({sl:'pt',tl:meta.google,u:PAGE_URL,hl:meta.google});
+  return 'https://translate.google.com/translate?'+p.toString();
+}
+select.value=getLang();
+select.addEventListener('change',()=>{
+  const lang=normalizeLang(select.value); saveLang(lang);
+  window.location.href=translateUrl(lang);
+});
+// Keep PT-BR as the canonical/original page. Google Translate provides the translated view.
+document.querySelectorAll('a[data-legal-link]').forEach(a=>a.addEventListener('click',()=>saveLang(getLang())));
+</script>
+</body></html>
