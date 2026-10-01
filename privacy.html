@@ -315,18 +315,43 @@ const select = document.getElementById('language-select');
 function normalizeLang(v){return LANG_META[v] ? v : 'pt-BR';}
 function saveLang(v){try{localStorage.setItem(STORAGE_KEY,v);}catch(e){}}
 function getLang(){try{return normalizeLang(localStorage.getItem(STORAGE_KEY)||'pt-BR');}catch(e){return 'pt-BR';}}
+function langFromGoogleCode(code){
+  if(!code) return null;
+  const wanted=String(code).toLowerCase();
+  const found=Object.entries(LANG_META).find(([,meta])=>String(meta.google).toLowerCase()===wanted);
+  return found ? found[0] : null;
+}
 function translateUrl(lang){
   const meta=LANG_META[lang];
-  if(!meta || lang==='pt-BR') return PAGE_URL;
+  if(!meta || lang==='pt-BR') return PAGE_URL+'?lang=pt-BR';
   const p=new URLSearchParams({sl:'pt',tl:meta.google,u:PAGE_URL,hl:meta.google});
   return 'https://translate.google.com/translate?'+p.toString();
 }
-select.value=getLang();
+const params=new URLSearchParams(window.location.search);
+const explicitRaw=params.get('lang');
+const explicitLang=explicitRaw && LANG_META[explicitRaw] ? explicitRaw : null;
+const proxyLang=langFromGoogleCode(params.get('_x_tr_tl')||params.get('tl'));
+if(explicitLang) saveLang(explicitLang);
+const activeLang=proxyLang || explicitLang || getLang();
+select.value=activeLang;
+
+// Na pagina oficial, respeita automaticamente o idioma salvo.
+// ?lang=pt-BR tambem permite voltar do proxy do Google sem entrar em loop.
+if(!proxyLang){
+  if(explicitLang==='pt-BR'){
+    try{history.replaceState(null,'',PAGE_URL);}catch(e){}
+  } else if(activeLang!=='pt-BR'){
+    window.location.replace(translateUrl(activeLang));
+  }
+}
+
 select.addEventListener('change',()=>{
-  const lang=normalizeLang(select.value); saveLang(lang);
+  const lang=normalizeLang(select.value);
+  saveLang(lang);
   window.location.href=translateUrl(lang);
 });
-// Keep PT-BR as the canonical/original page. Google Translate provides the translated view.
-document.querySelectorAll('a[data-legal-link]').forEach(a=>a.addEventListener('click',()=>saveLang(getLang())));
+
+// Mantem a preferencia registrada ao navegar entre os documentos legais.
+document.querySelectorAll('a[data-legal-link]').forEach(a=>a.addEventListener('click',()=>saveLang(activeLang)));
 </script>
 </body></html>
