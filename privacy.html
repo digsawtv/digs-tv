@@ -309,12 +309,9 @@ o tratamento de informações pelo DIGS TV:</p>
 <footer class="footer"><div class="footer-inner"><div class="footer-brand">⚡ DIGS TV — <span>Sua música. Seu servidor. Seu ritmo.</span></div><div class="footer-links"><a data-legal-link href="https://digsawtv.github.io/digs-tv/privacy.html">Política de Privacidade</a><a data-legal-link href="https://digsawtv.github.io/digs-tv/terms.html">Termos de Serviço</a><a href="mailto:digsawtv@gmail.com">Contato</a></div><div class="copyright">© 2026 DIGS TV. Documento oficial em Português (Brasil).</div></div></footer>
 <script>
 const PAGE_URL = "https://digsawtv.github.io/digs-tv/privacy.html";
-const STORAGE_KEY = 'digs-ui-language';
 const LANG_META = {"pt-BR": {"label": "Português (Brasil)", "flag": "🇧🇷", "google": "pt"}, "en": {"label": "English (United States)", "flag": "🇺🇸", "google": "en"}, "es": {"label": "Español (España)", "flag": "🇪🇸", "google": "es"}, "fr": {"label": "Français (France)", "flag": "🇫🇷", "google": "fr"}, "de": {"label": "Deutsch (Deutschland)", "flag": "🇩🇪", "google": "de"}, "it": {"label": "Italiano (Italia)", "flag": "🇮🇹", "google": "it"}, "ja": {"label": "日本語 (日本)", "flag": "🇯🇵", "google": "ja"}, "ko": {"label": "한국어 (대한민국)", "flag": "🇰🇷", "google": "ko"}, "zh-CN": {"label": "中文 (中国)", "flag": "🇨🇳", "google": "zh-CN"}, "ru": {"label": "Русский (Россия)", "flag": "🇷🇺", "google": "ru"}, "ar": {"label": "العربية (السعودية)", "flag": "🇸🇦", "google": "ar"}, "hi": {"label": "हिन्दी (भारत)", "flag": "🇮🇳", "google": "hi"}};
 const select = document.getElementById('language-select');
 function normalizeLang(v){return LANG_META[v] ? v : 'pt-BR';}
-function saveLang(v){try{localStorage.setItem(STORAGE_KEY,v);}catch(e){}}
-function getLang(){try{return normalizeLang(localStorage.getItem(STORAGE_KEY)||'pt-BR');}catch(e){return 'pt-BR';}}
 function langFromGoogleCode(code){
   if(!code) return null;
   const wanted=String(code).toLowerCase();
@@ -323,35 +320,20 @@ function langFromGoogleCode(code){
 }
 function translateUrl(lang){
   const meta=LANG_META[lang];
-  if(!meta || lang==='pt-BR') return PAGE_URL+'?lang=pt-BR';
+  if(!meta || lang==='pt-BR') return PAGE_URL;
   const p=new URLSearchParams({sl:'pt',tl:meta.google,u:PAGE_URL,hl:meta.google});
   return 'https://translate.google.com/translate?'+p.toString();
 }
-const params=new URLSearchParams(window.location.search);
-const explicitRaw=params.get('lang');
-const explicitLang=explicitRaw && LANG_META[explicitRaw] ? explicitRaw : null;
-const proxyLang=langFromGoogleCode(params.get('_x_tr_tl')||params.get('tl'));
-if(explicitLang) saveLang(explicitLang);
-const activeLang=proxyLang || explicitLang || getLang();
-select.value=activeLang;
 
-// Na pagina oficial, respeita automaticamente o idioma salvo.
-// ?lang=pt-BR tambem permite voltar do proxy do Google sem entrar em loop.
-if(!proxyLang){
-  if(explicitLang==='pt-BR'){
-    try{history.replaceState(null,'',PAGE_URL);}catch(e){}
-  } else if(activeLang!=='pt-BR'){
-    window.location.replace(translateUrl(activeLang));
-  }
-}
+// A pagina oficial sempre abre na versao original em Portugues (Brasil).
+// Outros idiomas somente sao abertos quando o visitante os escolhe no seletor.
+const params=new URLSearchParams(window.location.search);
+const proxyLang=langFromGoogleCode(params.get('_x_tr_tl')||params.get('tl'));
+select.value=proxyLang || 'pt-BR';
 
 select.addEventListener('change',()=>{
   const lang=normalizeLang(select.value);
-  saveLang(lang);
   window.location.href=translateUrl(lang);
 });
-
-// Mantem a preferencia registrada ao navegar entre os documentos legais.
-document.querySelectorAll('a[data-legal-link]').forEach(a=>a.addEventListener('click',()=>saveLang(activeLang)));
 </script>
 </body></html>
